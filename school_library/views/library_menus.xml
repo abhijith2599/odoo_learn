@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Library Parent Menu -->
+    <menuitem id="menu_school_library_parent"
+              name="Library"
+              parent="school_management.menu_school_root"
+              sequence="30"/>
+
+    <!-- Library Book Menu -->
+    <menuitem id="menu_school_library_books"
+              name="Books"
+              parent="menu_school_library_parent"
+              action="action_library_book"
+              sequence="10"/>
+
+    <!-- Library Book Issue Menu -->
+    <menuitem id="menu_school_library_issues"
+              name="Book Issues"
+              parent="menu_school_library_parent"
+              action="action_library_book_issue"
+              sequence="20"/>
+</odoo>

@@ -17,4 +17,6 @@
               parent="menu_school_root"
               action="action_school_student"
               sequence="20"/>
+
+    <!-- The action window act as the router. This is the starting point to the app we built. -->
 </odoo>
