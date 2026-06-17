@@ -10,6 +10,7 @@
                 <field name="roll_number"/>
                 <field name="gender"/>
                 <field name="class_id"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'applied'" decoration-success="state == 'enrolled'" decoration-danger="state == 'rejected'"/>
                 <field name="date_of_birth"/>
             </list>
         </field>
@@ -21,6 +22,12 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_apply" string="Apply" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_enroll" string="Enroll" type="object" class="oe_highlight" invisible="state != 'applied'"/>
+                    <button name="action_reject" string="Reject" type="object" invisible="state != 'applied'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,applied,enrolled,rejected"/>
+                </header>
                 <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
@@ -39,6 +46,7 @@
                         </group>
                     </group>
                 </sheet>
+                <chatter/>
             </form>
         </field>
     </record>
