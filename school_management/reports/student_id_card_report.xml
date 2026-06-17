@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Report Action -->
+    <record id="action_report_student_id_card" model="ir.actions.report">
+        <field name="name">Student ID Card</field>
+        <field name="model">school.student</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">school_management.report_student_id_card</field>
+        <field name="report_file">school_management.report_student_id_card</field>
+        <field name="print_report_name">'ID_Card_%s' % (object.name or 'Student')</field>
+        <field name="binding_model_id" ref="model_school_student"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_student_id_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row mt-5">
+                            <div class="col-6 mx-auto" style="border: 2px solid #333; border-radius: 10px; padding: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                                <div class="text-center mb-3">
+                                    <h2 style="color: #2c3e50; font-weight: bold; margin-bottom: 5px;">STUDENT ID CARD</h2>
+                                    <hr style="border-top: 2px solid #2c3e50; margin-top: 0;"/>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4 text-center">
+                                        <img t-if="o.photo" t-att-src="image_data_uri(o.photo)" style="max-height: 120px; max-width: 100%; border: 1px solid #ddd; border-radius: 5px;" alt="Student Photo"/>
+                                        <div t-if="not o.photo" style="height: 120px; width: 100px; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                            <span>No Photo</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <h4 style="margin-top: 0; color: #1a202c;"><span t-field="o.name"/></h4>
+                                        <table class="table table-sm table-borderless" style="margin-bottom: 0;">
+                                            <tr>
+                                                <td style="padding: 2px 0;"><strong>Reg/Roll No:</strong></td>
+                                                <td style="padding: 2px 0;"><span t-field="o.roll_number"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 2px 0;"><strong>Class:</strong></td>
+                                                <td style="padding: 2px 0;"><span t-field="o.class_id.name"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 2px 0;"><strong>Blood Group:</strong></td>
+                                                <td style="padding: 2px 0;"><span t-field="o.blood_group"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 2px 0;"><strong>Emergency Contact:</strong></td>
+                                                <td style="padding: 2px 0;"><span t-field="o.guardian_phone"/></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-12 text-center text-muted" style="font-size: 10px;">
+                                        <p style="margin-bottom: 0;">If found, please return to School Administration Office.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

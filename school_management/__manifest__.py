@@ -24,6 +24,8 @@
     'data': [
         'security/ir.model.access.csv',
         'data/cron.xml',
+        'data/mail_template.xml',
+        'reports/student_id_card_report.xml',
         'views/school_class_views.xml',
         'views/school_student_views.xml',
         'wizards/bulk_enroll_wizard_views.xml',
