@@ -25,6 +25,8 @@ class SchoolStudent(models.Model):
         ('O+', 'O+'), ('O-', 'O-'), ('AB+', 'AB+'), ('AB-', 'AB-')
     ], string='Blood Group')
     guardian_phone = fields.Char(string='Guardian Phone')
+    guardian_email = fields.Char(string='Guardian Email')
+    fee_balance = fields.Float(string='Fee Balance')
 
     state = fields.Selection([
         ('draft', 'Draft'),

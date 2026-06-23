@@ -6,6 +6,7 @@ class SchoolClass(models.Model):
     _description = 'School Class'
 
     name = fields.Char(string='Class Name', required=True)
+    teacher_id = fields.Many2one('res.users', string='Teacher')
     student_ids = fields.One2many('school.student', 'class_id', string='Students')
     student_count = fields.Integer(string='Student Count', compute='_compute_student_count')
 

@@ -22,6 +22,7 @@
 
     # always loaded
     'data': [
+        'security/security_groups.xml',
         'security/ir.model.access.csv',
         'data/cron.xml',
         'data/mail_template.xml',
