@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
+                <field name="teacher_id"/>
                 <field name="student_count"/>
             </list>
         </field>
@@ -33,6 +34,9 @@
                             <field name="name" placeholder="e.g. Grade 5-A"/>
                         </h1>
                     </div>
+                    <group>
+                        <field name="teacher_id"/>
+                    </group>
                     <notebook>
                         <page string="Students" name="students">
                             <field name="student_ids" readonly="1">

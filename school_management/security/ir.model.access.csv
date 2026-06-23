@@ -1,4 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_school_class,school.class,model_school_class,base.group_user,1,1,1,1
-access_school_student,school.student,model_school_student,base.group_user,1,1,1,1
-access_school_bulk_enroll_wizard,school.bulk.enroll.wizard,model_school_bulk_enroll_wizard,base.group_user,1,1,1,1
+access_school_student_parent,school.student.parent,model_school_student,group_school_parent,1,0,0,0
+access_school_student_teacher,school.student.teacher,model_school_student,group_school_teacher,1,1,0,0
+access_school_student_accounts,school.student.accounts,model_school_student,group_school_accounts,1,1,0,0
+access_school_student_principal,school.student.principal,model_school_student,group_school_principal,1,1,1,1
+
+access_school_class_parent,school.class.parent,model_school_class,group_school_parent,1,0,0,0
+access_school_class_teacher,school.class.teacher,model_school_class,group_school_teacher,1,1,0,0
+access_school_class_principal,school.class.principal,model_school_class,group_school_principal,1,1,1,1
+
+access_school_bulk_wizard_teacher,school.wizard.teacher,model_school_bulk_enroll_wizard,group_school_teacher,1,1,0,0
+access_school_bulk_wizard_principal,school.wizard.principal,model_school_bulk_enroll_wizard,group_school_principal,1,1,1,1

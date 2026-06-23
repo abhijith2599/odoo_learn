@@ -48,6 +48,8 @@
                             <field name="date_of_birth"/>
                             <field name="email"/>
                             <field name="guardian_phone"/>
+                            <field name="guardian_email"/>
+                            <field name="fee_balance" groups="school_management.group_school_principal,school_management.group_school_accounts"/>
                         </group>
                     </group>
                 </sheet>
