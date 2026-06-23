@@ -12,6 +12,7 @@
                 <field name="class_id"/>
                 <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-warning="state == 'applied'" decoration-success="state == 'enrolled'" decoration-danger="state == 'rejected'"/>
                 <field name="date_of_birth"/>
+                <field name="company_id" groups="base.group_multi_company"/>
             </list>
         </field>
     </record>
@@ -50,6 +51,7 @@
                             <field name="guardian_phone"/>
                             <field name="guardian_email"/>
                             <field name="fee_balance" groups="school_management.group_school_principal,school_management.group_school_accounts"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
                         </group>
                     </group>
                 </sheet>

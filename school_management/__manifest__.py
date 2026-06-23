@@ -24,6 +24,7 @@
     'data': [
         'security/security_groups.xml',
         'security/ir.model.access.csv',
+        'data/config_data.xml',
         'data/cron.xml',
         'data/mail_template.xml',
         'reports/student_id_card_report.xml',
