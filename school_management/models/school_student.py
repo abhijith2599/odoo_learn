@@ -13,8 +13,9 @@ class SchoolStudent(models.Model):
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
-        ('other', 'Other')
+        ('other', 'Other'),
     ], string='Gender', default='male')
+    company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.company)
     class_id = fields.Many2one('school.class', string='Class', required=True, ondelete='restrict')
     roll_number = fields.Char(string='Roll Number')
     date_of_birth = fields.Date(string='Date of Birth')

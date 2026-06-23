@@ -7,6 +7,7 @@ class SchoolClass(models.Model):
 
     name = fields.Char(string='Class Name', required=True)
     teacher_id = fields.Many2one('res.users', string='Teacher')
+    company_id = fields.Many2one('res.company', string='Company', required=True, default=lambda self: self.env.company)
     student_ids = fields.One2many('school.student', 'class_id', string='Students')
     student_count = fields.Integer(string='Student Count', compute='_compute_student_count')
 
